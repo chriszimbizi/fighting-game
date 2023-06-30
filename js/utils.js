@@ -17,11 +17,21 @@ function collisionDetection({ rectangle1, rectangle2 }) {
 const settingsButton = document.querySelector(".settings-icon i");
 const settingsDropdown = document.querySelector(".settings-dropdown");
 
-// Event listener to toggle settings visibility
-settingsButton.addEventListener("click", () => {
-  settingsDropdown.classList.toggle("active");
-  settingsButton.classList.toggle("rotate");
-});
+// Event listener to toggle settings visibility and close settings dropdown when clicking outside
+document.addEventListener("click", toggleSettings);
+
+// Function to toggle settings visibility and close settings dropdown when clicking outside
+function toggleSettings(event) {
+  const targetElement = event.target;
+  const isSettingsButton = targetElement === settingsButton;
+  const isInsideDropdown = settingsDropdown.contains(targetElement);
+
+  settingsDropdown.classList.toggle(
+    "active",
+    isSettingsButton || isInsideDropdown // Force: Add when true, remove when false
+  );
+  settingsButton.classList.toggle("rotate", isSettingsButton);
+}
 
 // Timer function
 let timer = 60;

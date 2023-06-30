@@ -84,6 +84,7 @@ body {
   inset: 0;
   display: grid;
   place-content: center;
+  user-select: none;
 }
 
 /* Settings */

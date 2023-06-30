@@ -164,7 +164,7 @@ function animate() {
   background.update();
   shop.update();
   // Overlay to increase contrast between characters and background
-  context.fillStyle = "rgba(255, 255, 255, 0.15)";
+  context.fillStyle = "rgba(255, 255, 255, 0.1)";
   context.fillRect(0, 0, canvasWidth, canvasHeight);
 
   player.update();
