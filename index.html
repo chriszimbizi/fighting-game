@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fighting Game</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/352941762f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container">
+      <!-- Health Bars + Timer Container -->
+      <div class="health-timer-container">
+        <!-- Player Health -->
+        <div class="health-bar player">
+          <!-- Initial Health -->
+          <div class="initial-health"></div>
+          <!-- Decreasing Health -->
+          <div id="playerHealth" class="decreasing-health"></div>
+        </div>
+
+        <!-- Timer -->
+        <div id="timer" class="timer">60</div>
+
+        <!-- Enemy Health -->
+        <div class="health-bar">
+          <!-- Initial Health -->
+          <div class="initial-health"></div>
+          <!-- Decreasing Health -->
+          <div id="enemyHealth" class="decreasing-health"></div>
+        </div>
+      </div>
+
+      <!-- Screen Text -->
+      <div id="screenText" class="screen-text">Press Enter to Start</div>
+
+      <!-- Settings -->
+      <div class="settings">
+        <div class="settings-icon">
+          <i class="fas fa-cog"></i>
+        </div>
+        <div class="settings-dropdown">
+          <label for="time-control">Time Control:</label>
+          <select id="timeControl">
+            <option value="30">30</option>
+            <option value="60" selected>60</option>
+            <option value="120">120</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Canvas -->
+      <canvas></canvas>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+
+    <!-- JS -->
+    <script src="js/sounds.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/classes/Sprite.js"></script>
+    <script src="js/classes/Fighter.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

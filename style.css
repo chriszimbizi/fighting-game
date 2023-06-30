@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Act of Rejection";
+  src: url("assets/fonts/act-of-rejection.ttf") format("truetype");
+}
+
+:root {
+  --ff-primary: "Act of Rejection", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 4rem;
+  color: white;
+}
+
+/* Container */
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Health Bars + Timer Container */
+.health-timer-container {
+  position: absolute;
+  display: none;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Player and Enemy Health Bars */
+.health-bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  border: 4px solid white;
+}
+
+.health-bar.player {
+  justify-content: end;
+}
+
+/* Initial Health */
+.initial-health {
+  position: relative;
+  background-color: red;
+  height: 30px;
+  width: 100%;
+}
+
+/* Decreasing Health */
+.decreasing-health {
+  background-color: yellow;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+/* Timer */
+.timer {
+  color: red;
+  font-weight: 700;
+  width: 100px;
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  margin-inline: 1rem;
+}
+
+/* Screen Text */
+.screen-text {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+}
+
+/* Settings */
+.settings {
+  position: absolute;
+  bottom: 3rem;
+  left: 1.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.settings-dropdown {
+  gap: 1rem;
+  align-items: center;
+  display: none;
+}
+.settings-dropdown.active {
+  display: flex;
+}
+
+.settings-dropdown select {
+  font-family: var(--ff-primary);
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+.settings-icon i {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 375ms ease;
+}
+
+.settings-icon i:hover {
+  color: yellow;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
