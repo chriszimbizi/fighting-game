@@ -4,5 +4,5 @@ const background = new Sprite({
     x: 0,
     y: 0,
   },
-  imageSrc: "/assets/backgrounds/background.png",
+  imageSrc: "assets/backgrounds/background.png",
 });
